@@ -1,0 +1,17 @@
+{% load static %}
+    <!-- INICIO BARRA NAV -->
+    <nav>
+        <div class="nav-izquierda">
+            <a href="{% url 'home' %}"><i class="fa-solid fa-house"></i></a>
+        </div>
+        <div class="nav-derecha">
+            <a href="{% url 'retornables' %}">RETORNABLES</a>
+            <a href="{% url 'bebidas' %}">BEBIDAS</a>
+            <a href="{% url 'aguaJugos' %}">AGUAS Y JUGOS</a>
+            <a href="{% url 'cervezas' %}">CERVEZAS</a>
+            <a href="{% url 'licores' %}">LICORES</a>
+            <a href="{% url 'vinos' %}">VINOS</a>
+            <a href="{% url 'espumantes' %}">ESPUMANTES</a>
+            <a href="{% url 'merchandising' %}">MERCHANDISING</a>
+        </div>
+    </nav>

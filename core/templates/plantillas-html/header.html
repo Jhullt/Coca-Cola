@@ -1,0 +1,19 @@
+{% load static %}
+    <script src="{% static 'funciones.js' %}"></script>
+    <!-- INICIO HEADER -->
+    <header>
+        <div class="header-izquierda">
+            <img class="logo" src="{% static 'header/logo.png' %}" alt="logo">
+        </div>
+        <div class="header-derecha">
+            <div class="divisa">
+                <button id="currencyButton" onclick="showModalDivisa()">CLP | Peso Chileno</button>
+            </div>
+            <div class="cuenta">
+                <button onclick="showModalCuenta()"><i class="fa-solid fa-user"></i> Mi cuenta</button>
+            </div>
+            <div class="carrito">
+                <a class="carrito-a" href="{% url 'carrito' %}"><i class="fa-solid fa-cart-shopping"></i>({{ request.session.carrito|length}})</a>
+            </div>
+        </div>
+    </header>

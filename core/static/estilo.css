@@ -1,0 +1,2176 @@
+/* FUENTES */
+@import url('https://fonts.cdnfonts.com/css/roboto');
+/* HEATER */
+header{
+    background-color: #ffffff;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 5%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+.logo{
+    width: 200px;
+    height: auto;
+}
+.header-izquierda, .divisa, .cuenta, .carrito{
+    display: flex;
+}
+.cuenta, .cuenta > a{
+    width: max-content;
+    height: fit-content;
+}
+.header-derecha{
+    display: flex;
+    column-gap: 50px;
+    align-items: center;
+}
+.divisa button{
+    background-color: #ffffff;
+    border-color: #cccccc;
+    border-width: 3px;
+    border-style: solid;
+    height: 40px;
+    width: 200px;
+    align-items: center;
+    display: flex;
+    border-radius: 100px;
+    justify-content: space-evenly;
+    align-content: flex-start;
+    font-family: 'Roboto', sans-serif;
+}
+.divisa button:hover{
+    color: #e51a26;
+}
+.cuenta button{
+    background-color: #ffffff;
+    border-color: #cccccc;
+    border-width: 3px;
+    border-style: solid;
+    height: 40px;
+    width: 150px;
+    align-items: center;
+    display: flex;
+    border-radius: 100px;
+    justify-content: space-evenly;
+    align-content: flex-start;
+    font-family: 'Roboto', sans-serif;
+}
+.cuenta button:hover{
+    color: #e51a26;
+}
+.cuenta a{
+    color: #212121;
+    text-decoration: none;
+}
+.carrito, .carrito > a{
+    width: max-content;
+    height: fit-content;
+}
+.carrito-a{
+    text-decoration: none;
+    color: #212121;
+}
+.carrito-a:hover{
+    color: #e51a26;
+}
+/* SHOW */
+.show{
+    display: block !important;
+}
+/* MODAL CUENTA */
+#modal-cuenta{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #323232e6;
+    display: none;
+    z-index: 10;
+}
+.interno-cuenta{
+    position: absolute;
+    width: 400px;
+    height: 500px;
+    background-color: #ffffff;
+    left: calc(50% - 200px);
+    top: calc(50% - 200px);
+}
+.datos-cuenta{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* DISEÑO MODAL CUENTA */
+.cerrar-contenedor-cuenta{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    width: 100%;
+    height: 50px;
+}
+.cerrar-boton{
+    border-style: none;
+    background-color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+.datos-cuenta h1{
+    color: #212121;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 25px;    
+}
+.datos-cuenta a{
+    color: #e51a26;
+    font-family: 'Roboto', sans-serif;
+    font-weight: none;
+    font-size: 15px;
+}
+.datos-cuenta a:hover{
+    color: #212121;
+}
+.usuario{
+    display: flex;
+    align-items: flex-end;
+    width: 320px;
+    padding-top: 1.5rem;
+}
+.usuario h2{
+    color: #212121;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+.usuario h3{
+    color: #e51a26;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 3px;
+}
+.datos-cuenta input{
+    border-color: #cccccc;
+    border-style: solid;
+    border-width: 2px;
+    width: 320px;
+    height: 34px;
+    border-radius: 0px;
+}
+.password{
+    display: flex;
+    align-items: flex-end;
+    width: 320px;
+    padding-top: 1.5rem;
+}
+.password h2{
+    color: #212121;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+.password h3{
+    color: #e51a26;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 3px;
+}
+.iniciar-sesion{
+    background-color: #e51a26;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    border-style: none;
+    width: 250px;
+    height: 40px;
+    border-radius: 7px;
+}
+.contenedor-error{
+    display: flex;
+    width: 320px;
+    justify-content: flex-start;
+}
+.contenedor-error p{
+    color: #e51a26;
+    font-family: 'Roboto', sans-serif;
+}
+.contenedor-iniciar-sesion{
+    display: flex;
+    height: 100px;
+    align-items: center;
+}
+/* MODAL DIVISA */
+#modal-divisa{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #323232e6;
+    display: none;
+    z-index: 10;
+}
+.interno-divisa{
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background-color: #ffffff;
+    left: calc(50% - 200px);
+    top: calc(50% - 200px);
+}
+.datos-divisa{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.cerrar-contenedor-divisa{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    width: 100%;
+    height: 50px;
+}
+.datos-divisa h1{
+    color: #212121;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 25px;    
+}
+.contenedor-divisa{
+    display: flex;
+    justify-content: flex-start;
+    width: 320px;
+    padding-top: 1rem;
+}
+.contenedor-divisa h2{
+    color: #212121;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 20px;    
+}
+.datos-divisa select{
+    border-color: #cccccc;
+    border-style: solid;
+    border-width: 2px;
+    width: 320px;
+    height: 34px;
+    border-radius: 0px;
+}
+.guardar-contenedor{
+    display: flex;
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+}
+.guardar-contenedor button{
+    background-color: #e51a26;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    border-style: none;
+    width: 250px;
+    height: 40px;
+    border-radius: 7px; 
+}
+.cancelar-contenedor button{
+    background-color: #ffffff;
+    color: #212121;
+    border-color: #e51a26;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    border-style: solid;
+    width: 250px;
+    height: 40px;
+    border-width: 3px;
+    border-radius: 7px; 
+}
+/* BARRA NAV */
+nav{
+    background-color: #000000;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 90px;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+nav a{
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+}
+nav a:hover{
+    color: #e51a26;
+}
+.nav-izquierda{
+   position: absolute;
+   left: 30px;
+}
+.nav-derecha{
+    display: flex;
+    column-gap: 1rem;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    margin-left: 50px;
+}
+/* FOOTER */
+footer{
+    background-color: #e51a26;
+    height: 270px;
+}
+.contenido-footer{
+    display: flex;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    height: 270px;
+    align-items: flex-start;
+    flex-direction: row;
+}
+.footer-separador{
+    height: 200px;
+    background-color: #ffffff;
+    width: 3px;
+}
+.footer-contenido h1{
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    color: #ffffff;
+}
+.footer-contenido{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 2rem;
+    padding-right: 4rem;
+}
+.footer-contenido a{
+    text-decoration: none;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    margin-bottom: 4px;
+}
+.footer-contenido a:hover{
+    color: #212121;
+}
+/* CARTAS */
+.contenedor-producto{
+    display: flex;
+    flex-direction: column;
+}
+.carta{
+    background-color: #ffffff;
+    width: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    height: 250px;
+}
+.carta h1{
+    padding-top: 10px;
+    color: #212121;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;}
+.carta h2{
+    color: #e51a26;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    padding-bottom: 5px;
+}
+.carta img{
+    width: 150px;
+    height: 150px;
+}
+.boton-agregar{
+    padding-top: 20px;
+}
+.boton-agregar button{
+    width: 180px;
+    border-radius: 10px;
+    border-style: none;
+    background-color: #e51a26;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+.boton-agregar a{
+    border-style: none;
+    background-color: #e51a26;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+}
+/* MAIN PAGINA PRINCIPAL */
+main{
+    background-color: #eeeeee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 3rem;
+    padding-top: 200px;
+}
+/* CARRUSEL */
+.contenedor-carrusel{   
+    width: 1000px;
+    margin: 0 auto;
+}
+/* OFERTAS */
+.separador-nombre{
+    display: flex;
+    align-items: center;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+.contenedor-titulo{
+    background-color: #e51a26;
+    width: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7px; 
+    height: 35px;
+}
+.contenedor-titulo h1{
+    color: #ffffff;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    line-height: 35px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* CONTENEDOR PRODUCTOS OFERTA */
+
+.ofertas{
+    display: flex;
+    width: 1000px;
+    justify-content: space-around;
+    align-items: center;
+}
+.popular{
+    display: flex;
+    width: 1000px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* PAGINA RETORNABLES */
+
+/* PAGINA BEBIDAS */
+
+/* PAGINA CERVEZAS */
+
+/* PAGINA LICORES */
+
+/* PAGINA VINOS */
+
+/* PAGINA ESPUMANTES */
+
+/* PAGINA MERCHANDISING*/
+
+/* PAGINA GANADORES */
+
+.ganadores-top{
+    width: 700px;
+    height: 400px;
+    display: flex;
+    align-items: flex-end
+}
+
+/* SEGUNDO GANADOR */
+.contenedor-nombre-ganador-top-2{
+    width: 200px;
+    height: 40px;
+    background-color: #e51a26;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenedor-nombre-ganador-top-2 h1{
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.contenedor-foto-ganador-top-2{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.contenedor-foto-ganador-top-2 img{
+    width: 200px;
+    height: 170px;
+}
+.contenedor-lugar-2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 210px;
+    height: 120px;
+    background-color: #e51a26;
+}
+.contenedor-lugar-2 h1{
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+    font-size: 40px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* PRIMER GANADOR */
+
+.contenedor-nombre-ganador-top-1{
+    width: 270px;
+    height: 40px;
+    background-color: #e51a26;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenedor-nombre-ganador-top-1 h1{
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.contenedor-foto-ganador-top-1{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.contenedor-foto-ganador-top-1 img{
+    width: 270px;
+    height: 150px;
+}
+.contenedor-lugar-1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 280px;
+    height: 150px;
+    background-color: #e51a26;
+}
+.contenedor-lugar-1 h1{
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+    font-size: 40px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* TERCER GANADOR */
+
+.contenedor-tercer-lugar{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end
+}
+.contenedor-nombre-ganador-top-3{
+    width: 200px;
+    height: 40px;
+    background-color: #e51a26;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenedor-nombre-ganador-top-3 h1{
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.contenedor-foto-ganador-top-3{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.contenedor-foto-ganador-top-3 img{
+    width: 200px;
+    height: 150px;
+}
+.contenedor-lugar-3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 210px;
+    height: 100px;
+    background-color: #e51a26;
+}
+.contenedor-lugar-3 h1{
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+    font-size: 40px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* ANTERIORES GANADORES */
+
+.ganadores-anteriores{
+    width: 1000px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.fila-ganadores{
+    display: flex;
+    width: 1000px;
+    justify-content: space-around;
+}
+.contenedor-ex-ganador{
+    display: flex;
+    flex-direction: column;
+}
+.nombre-ex-ganador{
+    width: 240px;
+    height: 30px;
+    background-color: #e51a26;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nombre-ex-ganador h1{
+    color: #ffffff;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.foto-ex-ganador img{
+    width: 240px;
+    height: 170px;
+}
+/* REGISTRO */
+.registro-supremo{
+    width: 1000px;
+}
+.contenedor-registro-arriba{
+    display: flex;
+    justify-content: space-between;
+}
+.registro-izquierda{
+    width: 500px;
+}
+.datos-obligatorios{
+    display: flex;
+    column-gap: 5px;
+}
+.datos-obligatorios h1{
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    color: #212121;
+}
+.datos-obligatorios h2{
+    color: #e51a26;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+.input-datos-registro input{
+    width: 350px;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 0px;
+}
+.parrafo-error p{
+    color: #e51a26;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+}
+.select-datos-registro{
+    padding-bottom: 33px;
+}
+.select-datos-registro select{
+    width: 350px;
+    height: 40.8px;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 0px;
+    border-color: #dee2e6;
+}
+.contenedor-registro-abajo{
+    display: flex;
+    height: 90px;
+    align-items: center;
+    justify-content: center;
+}
+.contenedor-registro-abajo button{
+    background-color: #e51a26;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    border-style: none;
+    width: 250px;
+    height: 40px;
+    border-radius: 7px;
+}
+/* DISEÑO DISTINTOS TAMAÑOS */
+/* 1100PX */
+@media (max-width: 1100px) {
+    /* HEADER */
+    .header{
+        height: 50px;
+    }
+    .header-derecha{
+        column-gap: 20px;
+    }
+    .logo{
+        width: 100px;
+        height: auto;
+    }
+    .divisa button{
+        border-width: 3px;
+        width: 170px;
+        font-size: 13px;
+        height: 30px;
+    }
+    .cuenta button{
+        border-width: 3px;
+        width: 140px;
+        font-size: 13px;
+        height: 30px;
+    }
+    .carrito-a a{
+        font-size: 13px;
+    }
+    /* NAV */
+    .nav-derecha a{
+        font-size: 13px;
+    }
+    .nav-izquierda{
+        display: flex;
+        align-items: center;
+    }
+    .nav-izquierda a{
+        font-size: 15px;
+    }
+    /* MAIN */
+
+    /* CARRUSEL */
+    .contenedor-carrusel{
+        width: 800px;
+    }
+    /* TITULOS */
+
+    .separador-nombre{
+        padding-top: 1.9rem;
+        padding-bottom: 1.9rem;
+    }
+    .contenedor-titulo{
+        width: 800px;
+        height: 35px;
+    }
+    .contenedor-titulo h1{
+        font-size: 17px;
+    }
+    .ofertas{
+        width: 800px;
+    }
+    .carta{
+        width: 180px;
+    }
+    .carta h1{
+        font-size: 16px;
+    }
+    .carta h2{
+        font-size: 20px;
+    }
+    .carta img{
+        width: 160px;
+        height: 160px;
+    }
+    .boton-agregar button{
+        width: 180px;
+        font-size: 17px;
+    }
+    .popular{
+        width: 800px;
+    }
+    .footer{
+        height: 240px;
+    }
+    .footer-contenido h1{
+        font-size: 15px;
+    }
+    .footer-separador{
+        height: 170px;
+    }
+    .footer-contenido a{
+        font-size: 12px;
+    }
+    .contenido-footer{
+        padding-bottom: 0;
+    }
+    .fila-ganadores{
+        width: 800px;
+    }
+    .ganadores-anteriores{
+        width: 800px;
+    }
+    /* REGISTRO */
+    .registro-supremo{
+        width: 800px;
+    }
+    .contenedor-registro-arriba{
+        display: flex;
+        justify-content: space-between;
+    }
+    .registro-izquierda{
+        width: 500px;
+    }
+    .datos-obligatorios{
+        display: flex;
+        column-gap: 5px;
+    }
+    .datos-obligatorios h1{
+        font-size: 20px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        color: #212121;
+    }
+    .datos-obligatorios h2{
+        color: #e51a26;
+        font-size: 20px;
+        font-family: 'Roboto', sans-serif;
+    }
+    .input-datos-registro input{
+        width: 350px;
+        border-style: solid;
+        border-width: 3px;
+        border-radius: 0px;
+    }
+    .parrafo-error p{
+        color: #e51a26;
+        font-family: 'Roboto', sans-serif;
+        font-size: 14px;
+    }
+    .select-datos-registro{
+        padding-bottom: 33px;
+    }
+    .select-datos-registro select{
+        width: 350px;
+        height: 40.8px;
+        border-style: solid;
+        border-width: 3px;
+        border-radius: 0px;
+        border-color: #dee2e6;
+    }
+    .contenedor-registro-abajo{
+        display: flex;
+        height: 90px;
+        align-items: center;
+        justify-content: center;
+    }
+    .contenedor-registro-abajo button{
+        background-color: #e51a26;
+        color: #ffffff;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        border-style: none;
+        width: 250px;
+        height: 40px;
+        border-radius: 7px;
+    }
+    /* DISEÑO MODAL CUENTA */
+    .cerrar-contenedor-cuenta{
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-end;
+        width: 100%;
+        height: 50px;
+    }
+    .cerrar-boton{
+        border-style: none;
+        background-color: #ffffff;
+        font-family: 'Roboto', sans-serif;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .datos-cuenta h1{
+        color: #212121;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        font-size: 20px;    
+    }
+    .datos-cuenta a{
+        color: #e51a26;
+        font-family: 'Roboto', sans-serif;
+        font-weight: none;
+        font-size: 15px;
+    }
+    .datos-cuenta a:hover{
+        color: #212121;
+    }
+    .usuario{
+        display: flex;
+        align-items: flex-end;
+        width: 320px;
+        padding-top: 1.5rem;
+    }
+    .usuario h2{
+        color: #212121;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        font-size: 16px;
+    }
+    .usuario h3{
+        color: #e51a26;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        font-size: 16px;
+        padding: 3px;
+    }
+    .datos-cuenta input{
+        border-color: #cccccc;
+        border-style: solid;
+        border-width: 2px;
+        width: 320px;
+        height: 34px;
+        border-radius: 0px;
+    }
+    .password{
+        display: flex;
+        align-items: flex-end;
+        width: 320px;
+        padding-top: 1.5rem;
+    }
+    .password h2{
+        color: #212121;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        font-size: 16px;
+    }
+    .password h3{
+        color: #e51a26;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        font-size: 16px;
+        padding: 3px;
+    }
+    .iniciar-sesion{
+        background-color: #e51a26;
+        color: #ffffff;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        border-style: none;
+        width: 250px;
+        height: 40px;
+        border-radius: 7px;
+        font-size: 17px;
+    }
+    .contenedor-error{
+        display: flex;
+        width: 320px;
+        justify-content: flex-start;
+    }
+    .contenedor-error p{
+        color: #e51a26;
+        font-family: 'Roboto', sans-serif;
+        font-size: 14px;
+    }
+    .contenedor-iniciar-sesion{
+        display: flex;
+        height: 100px;
+        align-items: center;
+    }
+    /* MODAL DIVISA */
+    #modal-divisa{
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #323232e6;
+        display: none;
+        z-index: 10;
+    }
+    .interno-divisa{
+        position: absolute;
+        width: 400px;
+        height: 400px;
+        background-color: #ffffff;
+        left: calc(50% - 200px);
+        top: calc(50% - 200px);
+    }
+    .datos-divisa{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .cerrar-contenedor-divisa{
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-end;
+        width: 100%;
+        height: 50px;
+    }
+    .datos-divisa h1{
+        color: #212121;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        font-size: 20px;    
+    }
+    .contenedor-divisa{
+        display: flex;
+        justify-content: flex-start;
+        width: 320px;
+        padding-top: 1rem;
+    }
+    .contenedor-divisa h2{
+        color: #212121;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        font-size: 16px;    
+    }
+    .datos-divisa select{
+        border-color: #cccccc;
+        border-style: solid;
+        border-width: 2px;
+        width: 320px;
+        height: 34px;
+        border-radius: 0px;
+    }
+    .guardar-contenedor{
+        display: flex;
+        padding-top: 4rem;
+        padding-bottom: 2rem;
+    }
+    .guardar-contenedor button{
+        background-color: #e51a26;
+        color: #ffffff;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        border-style: none;
+        width: 250px;
+        height: 40px;
+        border-radius: 7px; 
+        font-size: 15px;
+    }
+    .cancelar-contenedor button{
+        background-color: #ffffff;
+        color: #212121;
+        border-color: #e51a26;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        border-style: solid;
+        width: 250px;
+        height: 40px;
+        border-width: 3px;
+        border-radius: 7px;
+        font-size: 15px;
+    }
+}
+/* 860PX */
+@media (max-width: 860px) {
+    /* HEADER */
+    .header{
+        height: 50px;
+    }
+    .header-derecha{
+        column-gap: 20px;
+    }
+    .logo{
+        width: 100px;
+        height: auto;
+    }
+    .divisa button{
+        border-width: 2px;
+        width: 130px;
+        font-size: 10px;
+        height: 30px;
+    }
+    .cuenta button{
+        border-width: 2px;
+        width: 130px;
+        font-size: 10px;
+        height: 30px;
+    }
+    .carrito-a a{
+        font-size: 10px;
+    }
+    /* NAV */
+    .nav-derecha a{
+        font-size: 10px;
+    }
+    .nav-izquierda{
+        display: flex;
+        align-items: center;
+    }
+    .nav-izquierda a{
+        font-size: 15px;
+    }
+    /* MAIN */
+
+    /* CARRUSEL */
+    .contenedor-carrusel{
+        width: 700px;
+    }
+    /* TITULOS */
+
+    .separador-nombre{
+        padding-top: 1.9rem;
+        padding-bottom: 1.9rem;
+    }
+    .contenedor-titulo{
+        width: 700px;
+        height: 30px;
+    }
+    .contenedor-titulo h1{
+        font-size: 15px;
+    }
+    .ofertas{
+        width: 600px;
+    }
+    .carta{
+        width: 130px;
+    }
+    .carta h1{
+        font-size: 14px;
+    }
+    .carta h2{
+        font-size: 20px;
+    }
+    .carta img{
+        width: 130px;
+        height: 130px;
+    }
+    .boton-agregar button{
+        width: 130px;
+        font-size: 14px;
+    }
+    .popular{
+        width: 700px;
+    }
+    .footer{
+        height: 240px;
+    }
+    .footer-contenido h1{
+        font-size: 15px;
+    }
+    .footer-separador{
+        height: 170px;
+    }
+    .footer-contenido a{
+        font-size: 12px;
+    }
+    .contenido-footer{
+        padding-bottom: 0;
+    }
+    .fila-ganadores{
+        width: 700px;
+    }
+    .nombre-ex-ganador{
+        width: 200px;
+        height: 20px;
+    }
+    .nombre-ex-ganador h1{
+        font-size: 15px;
+    }
+    .foto-ex-ganador img{
+        width: 200px;
+    }
+    .ganadores-top{
+        width: 600px;
+    }
+    /* LUGAR 2 */
+    .contenedor-lugar-2{
+        width: 180px;
+    }
+    .contenedor-foto-ganador-top-2 img{
+        width: 170px;
+    }
+    .contenedor-nombre-ganador-top-2 {
+        width: 170px;
+        height: 30px;
+    }
+    .contenedor-nombre-ganador-top-2 h1{
+        font-size: 15px;
+    }
+    /* LUGAR 1 */
+    .contenedor-lugar-1{
+        width: 240px;
+    }
+    .contenedor-foto-ganador-top-1 img{
+        width: 240px;
+    }
+    .contenedor-nombre-ganador-top-1 {
+        width: 240px;
+        height: 40px;
+    }
+    .contenedor-nombre-ganador-top-1 h1{
+        font-size: 18px;
+    }
+    /* LUGAR 3 */
+    .contenedor-lugar-3{
+        width: 180px;
+    }
+    .contenedor-foto-ganador-top-3 img{
+        width: 170px;
+    }
+    .contenedor-nombre-ganador-top-3 {
+        width: 170px;
+        height: 30px;
+    }
+    .contenedor-nombre-ganador-top-3 h1{
+        font-size: 15px;
+    }
+    .ganadores-anteriores{
+        width: 700px;
+    }
+    /* REGISTRO */
+    .registro-supremo{
+        width: 700px;
+    }
+    .contenedor-registro-arriba{
+        display: flex;
+        justify-content: space-between;
+    }
+    .registro-izquierda{
+        width: 300px;
+    }
+    .datos-obligatorios{
+        display: flex;
+        column-gap: 5px;
+    }
+    .datos-obligatorios h1{
+        font-size: 17px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        color: #212121;
+    }
+    .datos-obligatorios h2{
+        color: #e51a26;
+        font-size: 17px;
+        font-family: 'Roboto', sans-serif;
+    }
+    .input-datos-registro input{
+        width: 260px;
+        height: 30PX;
+        border-style: solid;
+        border-width: 3px;
+        border-radius: 0px;
+    }
+    .parrafo-error p{
+        color: #e51a26;
+        font-family: 'Roboto', sans-serif;
+        font-size: 14px;
+        width: 260px;
+    }
+    .select-datos-registro{
+        padding-bottom: 26px;
+    }
+    .select-datos-registro select{
+        width: 260px;
+        height: 30px;
+        border-style: solid;
+        border-width: 3px;
+        border-radius: 0px;
+        border-color: #dee2e6;
+    }
+    .contenedor-registro-abajo{
+        display: flex;
+        height: 90px;
+        align-items: center;
+        justify-content: center;
+    }
+    .contenedor-registro-abajo button{
+        background-color: #e51a26;
+        color: #ffffff;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        border-style: none;
+        width: 230px;
+        height: 35px;
+        border-radius: 7px;
+    }
+    /* DISEÑO MODAL CUENTA */
+    .cerrar-contenedor-cuenta{
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-end;
+        width: 100%;
+        height: 50px;
+    }
+    .cerrar-boton{
+        border-style: none;
+        background-color: #ffffff;
+        font-family: 'Roboto', sans-serif;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .datos-cuenta h1{
+        color: #212121;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        font-size: 17px;    
+    }
+    .datos-cuenta a{
+        color: #e51a26;
+        font-family: 'Roboto', sans-serif;
+        font-weight: none;
+        font-size: 13px;
+    }
+    .datos-cuenta a:hover{
+        color: #212121;
+    }
+    .usuario{
+        display: flex;
+        align-items: flex-end;
+        width: 320px;
+        padding-top: 1.5rem;
+    }
+    .usuario h2{
+        color: #212121;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        font-size: 14px;
+    }
+    .usuario h3{
+        color: #e51a26;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        font-size: 14px;
+        padding: 3px;
+    }
+    .datos-cuenta input{
+        border-color: #cccccc;
+        border-style: solid;
+        border-width: 2px;
+        width: 320px;
+        height: 30px;
+        border-radius: 0px;
+    }
+    .password{
+        display: flex;
+        align-items: flex-end;
+        width: 320px;
+        padding-top: 1.5rem;
+    }
+    .password h2{
+        color: #212121;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        font-size: 14px;
+    }
+    .password h3{
+        color: #e51a26;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        font-size: 14px;
+        padding: 3px;
+    }
+    .iniciar-sesion{
+        background-color: #e51a26;
+        color: #ffffff;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        border-style: none;
+        width: 250px;
+        height: 30px;
+        border-radius: 7px;
+        font-size: 17px;
+    }
+    .contenedor-error{
+        display: flex;
+        width: 320px;
+        justify-content: flex-start;
+    }
+    .contenedor-error p{
+        color: #e51a26;
+        font-family: 'Roboto', sans-serif;
+        font-size: 12px;
+    }
+    .contenedor-iniciar-sesion{
+        display: flex;
+        height: 100px;
+        align-items: center;
+    }
+    /* MODAL DIVISA */
+    #modal-divisa{
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #323232e6;
+        display: none;
+        z-index: 10;
+    }
+    .interno-divisa{
+        position: absolute;
+        width: 400px;
+        height: 400px;
+        background-color: #ffffff;
+        left: calc(50% - 200px);
+        top: calc(50% - 200px);
+    }
+    .datos-divisa{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .cerrar-contenedor-divisa{
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-end;
+        width: 100%;
+        height: 50px;
+    }
+    .datos-divisa h1{
+        color: #212121;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        font-size: 17px;    
+    }
+    .contenedor-divisa{
+        display: flex;
+        justify-content: flex-start;
+        width: 320px;
+        padding-top: 1rem;
+    }
+    .contenedor-divisa h2{
+        color: #212121;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        font-size: 15px;    
+    }
+    .datos-divisa select{
+        border-color: #cccccc;
+        border-style: solid;
+        border-width: 2px;
+        width: 320px;
+        height: 34px;
+        border-radius: 0px;
+    }
+    .guardar-contenedor{
+        display: flex;
+        padding-top: 4rem;
+        padding-bottom: 2rem;
+    }
+    .guardar-contenedor button{
+        background-color: #e51a26;
+        color: #ffffff;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        border-style: none;
+        width: 250px;
+        height: 40px;
+        border-radius: 7px; 
+        font-size: 12px;
+    }
+    .cancelar-contenedor button{
+        background-color: #ffffff;
+        color: #212121;
+        border-color: #e51a26;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        border-style: solid;
+        width: 250px;
+        height: 40px;
+        border-width: 3px;
+        border-radius: 7px;
+        font-size: 12px;
+    }
+}
+/* 760PX */
+@media (max-width: 760px) {
+    /* HEADER */
+    .header{
+        height: 50px;
+    }
+    .header-derecha{
+        column-gap: 20px;
+    }
+    .logo{
+        width: 100px;
+        height: auto;
+    }
+    .divisa button{
+        border-width: 2px;
+        width: 130px;
+        font-size: 10px;
+        height: 30px;
+    }
+    .cuenta button{
+        border-width: 2px;
+        width: 130px;
+        font-size: 10px;
+        height: 30px;
+    }
+    .carrito-a a{
+        font-size: 13px;
+    }
+    /* NAV */
+    .nav-derecha a{
+        font-size: 12px;
+    }
+    .nav-izquierda{
+        display: flex;
+        align-items: center;
+    }
+    .nav-izquierda a{
+        font-size: 15px;
+    }
+    /* MAIN */
+
+    /* CARRUSEL */
+    .contenedor-carrusel{
+        width: 650px;
+    }
+    /* TITULOS */
+
+    .separador-nombre{
+        padding-top: 1.9rem;
+        padding-bottom: 1.9rem;
+    }
+    .contenedor-titulo{
+        width: 650px;
+        height: 30px;
+    }
+    .contenedor-titulo h1{
+        font-size: 13px;
+    }
+    .ofertas{
+        width: 650px;
+    }
+    .carta{
+        width: 110px;
+    }
+    .carta h1{
+        font-size: 13px;
+    }
+    .carta h2{
+        font-size: 18px;
+    }
+    .carta img{
+        width: 110px;
+        height: 110px;
+    }
+    .boton-agregar button{
+        width: 110px;
+        font-size: 13px;
+    }
+    .popular{
+        width: 650px;
+    }
+    .footer{
+        height: 240px;
+    }
+    .footer-contenido h1{
+        font-size: 15px;
+    }
+    .footer-separador{
+        height: 170px;
+    }
+    .footer-contenido a{
+        font-size: 12px;
+    }
+    .contenido-footer{
+        padding-bottom: 0;
+    }
+    .fila-ganadores{
+        width: 650px;
+    }
+    .nombre-ex-ganador{
+        width: 200px;
+        height: 20px;
+    }
+    .nombre-ex-ganador h1{
+        font-size: 15px;
+    }
+    .foto-ex-ganador img{
+        width: 200px;
+    }
+    .ganadores-top{
+        width: 600px;
+    }
+    /* LUGAR 2 */
+    .contenedor-lugar-2{
+        width: 180px;
+    }
+    .contenedor-foto-ganador-top-2 img{
+        width: 170px;
+    }
+    .contenedor-nombre-ganador-top-2 {
+        width: 170px;
+        height: 30px;
+    }
+    .contenedor-nombre-ganador-top-2 h1{
+        font-size: 15px;
+    }
+    /* LUGAR 1 */
+    .contenedor-lugar-1{
+        width: 210px;
+    }
+    .contenedor-foto-ganador-top-1 img{
+        width: 210px;
+    }
+    .contenedor-nombre-ganador-top-1 {
+        width: 210px;
+        height: 40px;
+    }
+    .contenedor-nombre-ganador-top-1 h1{
+        font-size: 18px;
+    }
+    /* LUGAR 3 */
+    .contenedor-lugar-3{
+        width: 180px;
+    }
+    .contenedor-foto-ganador-top-3 img{
+        width: 170px;
+    }
+    .contenedor-nombre-ganador-top-3 {
+        width: 170px;
+        height: 30px;
+    }
+    .contenedor-nombre-ganador-top-3 h1{
+        font-size: 15px;
+    }
+    .ganadores-anteriores{
+        width: 650px;
+    }
+    /* REGISTRO */
+    .registro-supremo{
+        width: 650px;
+    }
+    .contenedor-registro-arriba{
+        display: flex;
+        justify-content: space-between;
+    }
+    .registro-izquierda{
+        width: 300px;
+    }
+    .datos-obligatorios{
+        display: flex;
+        column-gap: 5px;
+    }
+    .datos-obligatorios h1{
+        font-size: 17px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        color: #212121;
+    }
+    .datos-obligatorios h2{
+        color: #e51a26;
+        font-size: 17px;
+        font-family: 'Roboto', sans-serif;
+    }
+    .input-datos-registro input{
+        width: 260px;
+        height: 30PX;
+        border-style: solid;
+        border-width: 3px;
+        border-radius: 0px;
+    }
+    .parrafo-error p{
+        color: #e51a26;
+        font-family: 'Roboto', sans-serif;
+        font-size: 14px;
+        width: 260px;
+    }
+    .select-datos-registro{
+        padding-bottom: 26px;
+    }
+    .select-datos-registro select{
+        width: 260px;
+        height: 30px;
+        border-style: solid;
+        border-width: 3px;
+        border-radius: 0px;
+        border-color: #dee2e6;
+    }
+    .contenedor-registro-abajo{
+        display: flex;
+        height: 90px;
+        align-items: center;
+        justify-content: center;
+    }
+    .contenedor-registro-abajo button{
+        background-color: #e51a26;
+        color: #ffffff;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        border-style: none;
+        width: 230px;
+        height: 35px;
+        border-radius: 7px;
+    }
+}
+/* 715PX */
+@media (max-width: 715px) {
+    /* HEADER */
+    .header{
+        height: 50px;
+    }
+    .header-derecha{
+        column-gap: 20px;
+    }
+    .logo{
+        width: 100px;
+        height: auto;
+    }
+    .divisa button{
+        border-width: 2px;
+        width: 130px;
+        font-size: 10px;
+        height: 30px;
+    }
+    .cuenta button{
+        border-width: 2px;
+        width: 130px;
+        font-size: 10px;
+        height: 30px;
+    }
+    .carrito-a a{
+        font-size: 13px;
+    }
+    /* NAV */
+    .nav-derecha a{
+        font-size: 10px;
+    }
+    .nav-izquierda{
+        display: flex;
+        align-items: center;
+    }
+    .nav-izquierda a{
+        font-size: 9px;
+    }
+    /* MAIN */
+
+    /* CARRUSEL */
+    .contenedor-carrusel{
+        width: 600px;
+    }
+    /* TITULOS */
+
+    .separador-nombre{
+        padding-top: 1.9rem;
+        padding-bottom: 1.9rem;
+    }
+    .contenedor-titulo{
+        width: 600px;
+        height: 30px;
+    }
+    .contenedor-titulo h1{
+        font-size: 13px;
+    }
+    .ofertas{
+        width: 650px;
+    }
+    .carta{
+        width: 110px;
+    }
+    .carta h1{
+        font-size: 13px;
+    }
+    .carta h2{
+        font-size: 18px;
+    }
+    .carta img{
+        width: 110px;
+        height: 110px;
+    }
+    .boton-agregar button{
+        width: 110px;
+        font-size: 13px;
+    }
+    .popular{
+        width: 650px;
+    }
+    .footer{
+        height: 240px;
+    }
+    .footer-contenido h1{
+        font-size: 15px;
+    }
+    .footer-separador{
+        height: 170px;
+    }
+    .footer-contenido a{
+        font-size: 12px;
+    }
+    .contenido-footer{
+        padding-bottom: 0;
+    }
+    .fila-ganadores{
+        width: 650px;
+    }
+    .nombre-ex-ganador{
+        width: 180px;
+        height: 20px;
+    }
+    .nombre-ex-ganador h1{
+        font-size: 15px;
+    }
+    .foto-ex-ganador img{
+        width: 180px;
+    }
+    .ganadores-top{
+        width: 500px;
+    }
+    /* LUGAR 2 */
+    .contenedor-lugar-2{
+        width: 140px;
+    }
+    .contenedor-foto-ganador-top-2 img{
+        width: 130px;
+        height: 120px;
+    }
+    .contenedor-nombre-ganador-top-2 {
+        width: 130px;
+        height: 30px;
+    }
+    .contenedor-nombre-ganador-top-2 h1{
+        font-size: 11px;
+    }
+    /* LUGAR 1 */
+    .contenedor-lugar-1{
+        width: 200px;
+    }
+    .contenedor-foto-ganador-top-1 img{
+        width: 200px;
+    }
+    .contenedor-nombre-ganador-top-1 {
+        width: 200px;
+        height: 30px;
+    }
+    .contenedor-nombre-ganador-top-1 h1{
+        font-size: 14px;
+    }
+    /* LUGAR 3 */
+    .contenedor-lugar-3{
+        width: 160px;
+    }
+    .contenedor-foto-ganador-top-3 img{
+        width: 150px;
+    }
+    .contenedor-nombre-ganador-top-3 {
+        width: 150px;
+        height: 30px;
+    }
+    .contenedor-nombre-ganador-top-3 h1{
+        font-size: 15px;
+    }
+    .ganadores-anteriores{
+        width: 600px;
+    }
+    /* REGISTRO */
+    .registro-supremo{
+        width: 600px;
+    }
+    .contenedor-registro-arriba{
+        display: flex;
+        justify-content: space-between;
+    }
+    .registro-izquierda{
+        width: 300px;
+    }
+    .datos-obligatorios{
+        display: flex;
+        column-gap: 5px;
+    }
+    .datos-obligatorios h1{
+        font-size: 17px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        color: #212121;
+    }
+    .datos-obligatorios h2{
+        color: #e51a26;
+        font-size: 17px;
+        font-family: 'Roboto', sans-serif;
+    }
+    .input-datos-registro input{
+        width: 260px;
+        height: 30PX;
+        border-style: solid;
+        border-width: 3px;
+        border-radius: 0px;
+    }
+    .parrafo-error p{
+        color: #e51a26;
+        font-family: 'Roboto', sans-serif;
+        font-size: 14px;
+        width: 260px;
+    }
+    .select-datos-registro{
+        padding-bottom: 26px;
+    }
+    .select-datos-registro select{
+        width: 260px;
+        height: 30px;
+        border-style: solid;
+        border-width: 3px;
+        border-radius: 0px;
+        border-color: #dee2e6;
+    }
+    .contenedor-registro-abajo{
+        display: flex;
+        height: 90px;
+        align-items: center;
+        justify-content: center;
+    }
+    .contenedor-registro-abajo button{
+        background-color: #e51a26;
+        color: #ffffff;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        border-style: none;
+        width: 230px;
+        height: 35px;
+        border-radius: 7px;
+    }
+}
+
+/* 630PX */
+@media (max-width: 630px) {
+    /* HEADER */
+    .header{
+        height: 50px;
+    }
+    .header-derecha{
+        column-gap: 20px;
+    }
+    .logo{
+        width: 100px;
+        height: auto;
+    }
+    .divisa button{
+        border-width: 2px;
+        width: 130px;
+        font-size: 10px;
+        height: 30px;
+    }
+    .cuenta button{
+        border-width: 2px;
+        width: 130px;
+        font-size: 10px;
+        height: 30px;
+    }
+    .carrito-a a{
+        font-size: 13px;
+    }
+    /* NAV */
+    .nav-derecha a{
+        font-size: 8px;
+    }
+    .nav-izquierda{
+        display: flex;
+        align-items: center;
+    }
+    .nav-izquierda a{
+        font-size: 9px;
+    }
+    /* MAIN */
+
+    /* CARRUSEL */
+    .contenedor-carrusel{
+        width: 550px;
+    }
+    /* TITULOS */
+
+    .separador-nombre{
+        padding-top: 1.9rem;
+        padding-bottom: 1.9rem;
+    }
+    .contenedor-titulo{
+        width: 550px;
+        height: 30px;
+    }
+    .contenedor-titulo h1{
+        font-size: 13px;
+    }
+    .ofertas{
+        width: 550px;
+    }
+    .carta{
+        width: 120px;
+    }
+    .carta h1{
+        font-size: 13px;
+    }
+    .carta h2{
+        font-size: 18px;
+    }
+    .carta img{
+        width: 110px;
+        height: 110px;
+    }
+    .boton-agregar button{
+        width: 120px;
+        font-size: 13px;
+    }
+    .popular{
+        width: 550px;
+    }
+    .footer{
+        height: 240px;
+    }
+    .footer-contenido h1{
+        font-size: 15px;
+    }
+    .footer-separador{
+        height: 170px;
+    }
+    .footer-contenido a{
+        font-size: 12px;
+    }
+    .contenido-footer{
+        padding-bottom: 0;
+    }
+    .fila-ganadores{
+        width: 550px;
+    }
+    .nombre-ex-ganador{
+        width: 160px;
+        height: 20px;
+    }
+    .nombre-ex-ganador h1{
+        font-size: 15px;
+    }
+    .foto-ex-ganador img{
+        width: 160px;
+        height: 130px;
+    }
+    .ganadores-top{
+        width: 480px;
+    }
+    /* LUGAR 2 */
+    .contenedor-lugar-2{
+        width: 160px;
+    }
+    .contenedor-foto-ganador-top-2 img{
+        width: 150px;
+    }
+    .contenedor-nombre-ganador-top-2 {
+        width: 150px;
+        height: 30px;
+    }
+    .contenedor-nombre-ganador-top-2 h1{
+        font-size: 15px;
+    }
+    /* LUGAR 1 */
+    .contenedor-lugar-1{
+        width: 180px;
+    }
+    .contenedor-foto-ganador-top-1 img{
+        width: 180px;
+    }
+    .contenedor-nombre-ganador-top-1 {
+        width: 180px;
+        height: 40px;
+    }
+    .contenedor-nombre-ganador-top-1 h1{
+        font-size: 14px;
+    }
+    /* LUGAR 3 */
+    .contenedor-lugar-3{
+        width: 160px;
+    }
+    .contenedor-foto-ganador-top-3 img{
+        width: 150px;
+    }
+    .contenedor-nombre-ganador-top-3 {
+        width: 150px;
+        height: 30px;
+    }
+    .contenedor-nombre-ganador-top-3 h1{
+        font-size: 15px;
+    }
+    .ganadores-anteriores{
+        width: 550px;
+    }
+    /* REGISTRO */
+    .registro-supremo{
+        width: 550px;
+    }
+    .contenedor-registro-arriba{
+        display: flex;
+        justify-content: space-between;
+    }
+    .registro-izquierda{
+        width: 300px;
+    }
+    .datos-obligatorios{
+        display: flex;
+        column-gap: 5px;
+    }
+    .datos-obligatorios h1{
+        font-size: 14px;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        color: #212121;
+    }
+    .datos-obligatorios h2{
+        color: #e51a26;
+        font-size: 14px;
+        font-family: 'Roboto', sans-serif;
+    }
+    .input-datos-registro input{
+        width: 260px;
+        height: 30PX;
+        border-style: solid;
+        border-width: 3px;
+        border-radius: 0px;
+    }
+    .parrafo-error p{
+        color: #e51a26;
+        font-family: 'Roboto', sans-serif;
+        font-size: 14px;
+        width: 260px;
+    }
+    .select-datos-registro{
+        padding-bottom: 26px;
+    }
+    .select-datos-registro select{
+        width: 260px;
+        height: 30px;
+        border-style: solid;
+        border-width: 3px;
+        border-radius: 0px;
+        border-color: #dee2e6;
+    }
+    .contenedor-registro-abajo{
+        display: flex;
+        height: 90px;
+        align-items: center;
+        justify-content: center;
+    }
+    .contenedor-registro-abajo button{
+        background-color: #e51a26;
+        color: #ffffff;
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        border-style: none;
+        width: 230px;
+        height: 35px;
+        border-radius: 7px;
+        font-size: 13px;
+    }
+}

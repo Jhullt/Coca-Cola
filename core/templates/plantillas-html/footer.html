@@ -1,0 +1,35 @@
+{% load static %}
+    <!-- INICIO FOOOTER -->
+    <footer>
+        <div class="contenido-footer">
+            <!-- MI CUENTA -->
+            <div class="footer-contenido">
+                <h1>Mi cuenta</h1>
+                <a href="{% url 'miPerfil' %}">Mi cuenta</a>
+                <a href="{% url 'misPedidos' %}">Mis pedidos</a>
+                <a href="{% url 'repetirPedidos' %}">Repetir pedidos</a>
+            </div>
+            <!-- SEPARADOR -->
+            <div class="footer-separador"></div>
+            <!-- CONCURSOS Y PROMOCIONES -->
+            <div class="footer-contenido">
+                <h1>CONCURSOS Y PROMOCIONES</h1>
+                <a href="{% url 'condiciones' %}">Condiciones de promociones</a>
+                <a href="{% url 'ganadores' %}">Ganadores de concursos</a>
+                <a href="{% url 'basesLegales' %}">Bases legales</a>
+            </div>
+            <!-- SEPARADOR -->
+            <div class="footer-separador"></div>
+            <!-- TERMINOS Y CONDICIONES -->
+            <div class="footer-contenido">
+                <h1>TÉRMINOS Y CONDICIONES</h1>
+                <a href="{% url 'terminosCondiciones' %}">Términos y condiciones</a>
+                <a href="{% url 'politica' %}">Políticas de privacidad</a>
+                <a href="{% url 'limite' %}">Límite de unidades en promoción</a>
+                <a href="{% url 'cookies' %}">Política de Cookies</a>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>

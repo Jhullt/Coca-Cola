@@ -1,0 +1,55 @@
+{% load static %}
+    <div id="modal-cuenta">
+        <div class="interno-cuenta">
+            <form action="#">
+                <div class="datos-cuenta">
+                    <div class="cerrar-contenedor-cuenta">
+                        <button class="cerrar-boton" type="button" onclick="showModalCuenta()">X</button>
+                    </div>
+                    <h1>Iniciar Sesión</h1>
+                    <a href="{% url 'registrarse' %}">Registrarse</a>
+                    <div class="usuario">
+                        <h2>Usuario</h2>
+                        <h3>*</h3>
+                    </div>
+                    <input type="text" name="usuario" class="form-control incorrect" id="user" onkeyup="validarUsuario()">
+                    <div class="contenedor-error">
+                        <p class="texto-error" id="error-user">El usuario no puede estar vacío</p>
+                    </div>
+                    <div class="password">
+                        <h2>Contraseña</h2>
+                        <h3>*</h3>
+                    </div>
+                    <input type="password" name="password" class="form-control incorrect" id="password" onkeyup="validarPassword()">
+                    <div class="contenedor-error">
+                        <p class="texto-error" id="error-password">La contraseña no puede estar vacía</p>
+                    </div>
+                    <div class="contenedor-iniciar-sesion">
+                        <button class="iniciar-sesion">Iniciar Sesión</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="modal-divisa">
+        <div class="interno-divisa">
+            <form action="#">
+                <div class="datos-divisa">
+                    <div class="cerrar-contenedor-divisa">
+                    <button class="cerrar-boton" type="button" onclick="showModalDivisa()">X</button>
+                    </div>
+                    <h1>Moneda</h1>
+                    <div class="contenedor-divisa">
+                    <h2>Divisa</h2>
+                    </div>
+                    <select id="coinSelect"></select>
+                    <div class="guardar-contenedor">
+                        <button id="guardar">Guardar</button>
+                    </div>
+                    <div class="cancelar-contenedor">
+                        <button type="button" onclick="showModalDivisa()">Cancelar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>

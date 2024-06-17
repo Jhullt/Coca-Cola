@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+{% include 'plantillas-html/head.html' %}
+
+<body onload="getOfertas(); getPopular()">
+    {% include 'plantillas-html/header.html' %}
+    {% include 'plantillas-html/nav.html' %}
+    <!-- INICIO MAIN -->
+    <main>
+        <div class="separador-nombre">
+            <div class="contenedor-titulo">
+                <h1>CARRITO</h1>
+            </div>
+        </div>
+        {% if request.session.carrito|length > 0 %}
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NOMBRE</th>
+                    <th>IMAGEN</th>
+                    <th>PRECIO</th>
+                    <th>CANTIDAD</th>
+                    <th>SUBTOTAL</th>
+                    <th>ELIMINAR</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in request.session.carrito%}
+                    <tr></tr>
+                    <tr></tr>
+                    <tr></tr>
+                    <tr></tr>
+                    <tr></tr>
+                    <tr></tr>
+                    <tr></tr>
+            </tbody>
+        </table>
+    </main>
+    {% include 'plantillas-html/footer.html' %}
+</body>
+    {% include 'plantillas-html/modal.html' %}
+</html>
