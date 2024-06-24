@@ -4,7 +4,7 @@
 
 {% include 'plantillas-html/head.html' %}
 
-<body onload="getOfertas(); getPopular()">
+<body>
     {% include 'plantillas-html/header.html' %}
     {% include 'plantillas-html/nav.html' %}
     <!-- INICIO MAIN -->
@@ -26,11 +26,10 @@
                     <!-- INPUT -->
                     <div class="input-datos-registro">
                         {{form.username}}
-                        <!-- <input type="text" name="usuarioRegistro" class="form-control incorrect" id="usuarioRegistro" onkeyup="validarUsuarioRegistro()"> -->
                     </div>
                     <!-- ERROR -->
                     <div class="parrafo-error">
-                        <p class="texto-error" id="error-usuarioRegistro">El usuario no puede estar vacío</p>
+                        <p class="texto-error" id="error-user">El usuario no puede estar vacío</p>
                     </div>
                     <!-- CORREO -->
                     <div class="datos-obligatorios">
@@ -40,7 +39,6 @@
                     <!-- INPUT -->
                     <div class="input-datos-registro">
                         {{form.email}}
-                        <!-- <input type="email" name="correoRegistro" class="form-control incorrect" id="correoRegistro" onkeyup="validarCorreoRegistro()"> -->
                     </div>
                     <!-- ERROR -->
                     <div class="parrafo-error">
@@ -53,7 +51,7 @@
                     </div>
                     <!-- INPUT -->
                     <div class="input-datos-registro">
-                        <input type="text" name="passwordRegistro" class="form-control incorrect" id="passwordRegistro" onkeyup="validarPasswordRegistro()">
+                        {{form.password1}}
                     </div>
                     <!-- ERROR -->
                     <div class="parrafo-error">
@@ -68,7 +66,7 @@
                     </div>
                     <!-- INPUT -->
                     <div class="input-datos-registro">
-                        <input type="text" name="confirmarPasswordRegistro" class="form-control incorrect" id="confirmarPasswordRegistro" onkeyup="validarConfirmarPasswordRegistro()">
+                        {{ form.password2}}
                     </div>
                     <!-- ERROR -->
                     <div class="parrafo-error">
@@ -95,7 +93,7 @@
                     </div>
                     <!-- INPUT -->
                     <div class="input-datos-registro">
-                        <input type="date" name="nacimientoRegistro" class="form-control incorrect" id="nacimientoRegistro" onkeyup="validarNacimientoRegistro()">
+                        {{ form.nacimiento}}
                     </div>
                     <!-- ERROR -->
                     <div class="parrafo-error">
