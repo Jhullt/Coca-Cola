@@ -7,7 +7,8 @@ def carrito(request):
 # BARRA NAV
 def home(request):
     productos = Producto.objects.all()
-    return render(request, "index.html", {'productos':productos})
+    carrusel = Carrusel.objects.all()
+    return render(request, "index.html", {'productos':productos, 'carrusel':carrusel})
 def retornables(request):
     return render(request, "barra-nav-html/retornables.html")
 def bebidas(request):
@@ -79,7 +80,6 @@ def addToCar(request, id):
             "subtotal":producto.precio})
     print(id)
     request.session["carrito"] = carrito
-    request.sessopm.flush()
     return redirect(to="home")
 #REGISTRO
 def registrarse(request):

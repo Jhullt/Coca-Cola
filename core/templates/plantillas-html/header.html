@@ -13,7 +13,7 @@
                 <button onclick="showModalCuenta()"><i class="fa-solid fa-user"></i> Mi cuenta</button>
             </div>
             <div class="carrito">
-                <a class="carrito-a" href="{% url 'carrito' %}"><i class="fa-solid fa-cart-shopping"></i>({{ request.session.carrito|length}})</a>
+                <a class="carrito-a" href="#" onclick="showModalCarrito()"><i class="fa-solid fa-cart-shopping"></i> ({{ request.session.carrito|length}})</a>
             </div>
         </div>
     </header>

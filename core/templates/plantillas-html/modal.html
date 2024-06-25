@@ -1,64 +1,104 @@
 {% load static %}
-    <div id="modal-cuenta">
-        <div class="interno-cuenta">
-            <form action="#">
-                <div class="datos-cuenta">
-                    <div class="cerrar-contenedor-cuenta">
-                        <button class="cerrar-boton" type="button" onclick="showModalCuenta()">X</button>
-                    </div>
-                    <h1>Iniciar Sesión</h1>
-                    <a href="{% url 'registrarse' %}">Registrarse</a>
-                    <div class="usuario">
-                        <h2>Usuario</h2>
-                        <h3>*</h3>
-                    </div>
-                    <input type="text" name="usuario" class="form-control incorrect" id="user" onkeyup="validarUsuario()">
-                    <div class="contenedor-error">
-                        <p class="texto-error" id="error-user">El usuario no puede estar vacío</p>
-                    </div>
-                    <div class="password">
-                        <h2>Contraseña</h2>
-                        <h3>*</h3>
-                    </div>
-                    <input type="password" name="password" class="form-control incorrect" id="password" onkeyup="validarPassword()">
-                    <div class="contenedor-error">
-                        <p class="texto-error" id="error-password">La contraseña no puede estar vacía</p>
-                    </div>
-                    <div class="contenedor-iniciar-sesion">
-                        <button class="iniciar-sesion">Iniciar Sesión</button>
-                    </div>
+<div id="modal-cuenta">
+    <div class="interno-cuenta">
+        <form action="#">
+            <div class="datos-cuenta">
+                <div class="cerrar-contenedor-cuenta">
+                    <button class="cerrar-boton" type="button" onclick="showModalCuenta()">X</button>
                 </div>
-            </form>
-        </div>
+                <h1>Iniciar Sesión</h1>
+                <a href="{% url 'registrarse' %}">Registrarse</a>
+                <div class="usuario">
+                    <h2>Usuario</h2>
+                    <h3>*</h3>
+                </div>
+                <input type="text" name="usuario" class="form-control incorrect" id="user" onkeyup="validarUsuario()">
+                <div class="contenedor-error">
+                    <p class="texto-error" id="error-user">El usuario no puede estar vacío</p>
+                </div>
+                <div class="password">
+                    <h2>Contraseña</h2>
+                    <h3>*</h3>
+                </div>
+                <input type="password" name="password" class="form-control incorrect" id="password"
+                    onkeyup="validarPassword()">
+                <div class="contenedor-error">
+                    <p class="texto-error" id="error-password">La contraseña no puede estar vacía</p>
+                </div>
+                <div class="contenedor-iniciar-sesion">
+                    <button class="iniciar-sesion">Iniciar Sesión</button>
+                </div>
+            </div>
+        </form>
     </div>
-    <div id="modal-divisa">
-        <div class="interno-divisa">
-            <form action="#">
-                <div class="datos-divisa">
-                    <div class="cerrar-contenedor-divisa">
+</div>
+<div id="modal-divisa">
+    <div class="interno-divisa">
+        <form action="#">
+            <div class="datos-divisa">
+                <div class="cerrar-contenedor-divisa">
                     <button class="cerrar-boton" type="button" onclick="showModalDivisa()">X</button>
-                    </div>
-                    <h1>Moneda</h1>
-                    <div class="contenedor-divisa">
+                </div>
+                <h1>Moneda</h1>
+                <div class="contenedor-divisa">
                     <h2>Divisa</h2>
+                </div>
+                <select id="coinSelect"></select>
+                <div class="guardar-contenedor">
+                    <button id="guardar">Guardar</button>
+                </div>
+                <div class="cancelar-contenedor">
+                    <button type="button" onclick="showModalDivisa()">Cancelar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div id="modal-carrito">
+    <div class="interno-carrito">
+        <form action="#">
+            <div class="datos-carrito">
+                <div class="cerrar-contenedor-carrito">
+                    <button class="cerrar-boton" type="button" onclick="showModalCarrito()">X</button>
+                </div>
+                <div class="contenedor-titulo-carrito">
+                    <h1>Artículos en el carrito</h1>
+                </div>
+                <div class="separador-carrito"></div>
+                <div class="parte-medio-carrito">
+                    {% for item in request.session.carrito %}
+                    <div class="tarjeta-producto-carro">
+                        <div class="carrito-parte-1">
+                            <img src="{% static item.imagen %}">
+                        </div>
+                        <div class="carrito-parte-2">
+                            <div class="carrito-nombre">
+                                <h1>{{ item.nombre }}</h1>
+                            </div>
+                            <div class="carrito-precio">
+                                <h1>${{ item.precio }}</h1>
+                            </div>
+                            <div class="carrito-borrar">
+                                <a href="{% url 'delToCar' item.id %}"><i class="fa-solid fa-trash"></i></a>
+                            </div>
+                        </div>
                     </div>
-                    <select id="coinSelect"></select>
-                    <div class="guardar-contenedor">
-                        <button id="guardar">Guardar</button>
+                    {% endfor %}
+                </div>
+                <div class="contenedor-pago-final">
+                    <div class="contenedor-total-carrito">
+                        <h1>Total :</h1>
+                        <h2>$13.520</h2>
                     </div>
-                    <div class="cancelar-contenedor">
-                        <button type="button" onclick="showModalDivisa()">Cancelar</button>
+                    <div class="contenedor-button-pago">
+                        <button>Ir al pago</button>
+                    </div>
+                    <div class="contenedor-pedidos-anteriores">
+                        <button>Ir a pedidos anteriores</button>
                     </div>
                 </div>
-            </form>
-        </div>
+
+            </div>
+        </form>
     </div>
-    <div id="modal-carrito">
-        <div class="interno-carrito">
-            <form action="#">
-                <div class="contenedor-carrito">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
-                </div>
-            </form>
-        </div>
-    </div>
+</div>

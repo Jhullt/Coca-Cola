@@ -9,9 +9,12 @@ function showModalDivisa(){
     let modal = document.querySelector("#modal-divisa")
     modal.classList.toggle("show")
 }
-
+// MODAL CARRITO
+function showModalCarrito(){
+    let modal = document.querySelector("#modal-carrito")
+    modal.classList.toggle("show")
+}
 // API MONEDAS
-
 fetch('https://api.exchangerate-api.com/v4/latest/USD')
     .then(response => response.json())
     .then(data => {

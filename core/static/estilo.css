@@ -12,7 +12,7 @@ header{
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000;
+    z-index: 2;
 }
 .logo{
     width: 200px;
@@ -207,6 +207,155 @@ header{
     height: 100px;
     align-items: center;
 }
+/* MODAL CARRITO */
+#modal-carrito{
+    width: calc(100vw - 15px);
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #323232e6;
+    display: none;
+    z-index: 10;
+}
+.interno-carrito{
+    position: absolute;
+    width: 400px;
+    height: 100vh;
+    right: 0;
+    z-index: 100;
+    top: 0px;
+    background-color: #ffffff;
+}
+.datos-carrito{
+    display: flex;
+    flex-direction: column;
+}
+.contenedor-titulo-carrito{
+    display: flex;
+    justify-content: center;
+}
+.contenedor-titulo-carrito h1{
+    color: #212121;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+}
+.separador-carrito{
+    background-color: #000000;
+    width: 100%;
+    height: 2px;
+}
+.contenedor-pago-final{
+    height: 30vh;
+    position: absolute;
+    bottom: 0;
+    border-top: 2px #cccccc solid;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.contenedor-total-carrito{
+    margin-top: 10px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.contenedor-total-carrito h1{
+    color: #212121;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+    margin-left: 10px;
+}
+.contenedor-total-carrito h2{
+    color: #212121;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    font-size: 25px; 
+}
+.contenedor-button-pago{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+}
+.contenedor-button-pago button{
+    background-color: #e51a26;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    border-style: none;
+    width: 250px;
+    height: 40px;
+    border-radius: 7px;
+}
+.contenedor-pedidos-anteriores{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10px;
+}
+.contenedor-pedidos-anteriores button{
+    background-color: #ffffff;
+    color: #212121;
+    border-color: #e51a26;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    border-style: solid;
+    width: 250px;
+    height: 40px;
+    border-width: 3px;
+    border-radius: 7px; 
+}
+/* PRODUCTOS CARRITO */
+.tarjeta-producto-carro{
+    display: flex;
+    border-style: solid;
+    border-color: #cccccc;
+    border-radius: 10px;
+    padding: 15px;
+}
+.carrito-parte-1 img{
+    width: 100px;
+    height: 100px;
+}
+.carrito-parte-2{
+    margin-left: 5px;
+    display: flex;
+    flex-direction: column;
+}
+.carrito-nombre h1{
+    color: #212121;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+}
+.carrito-precio{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.carrito-precio h1{
+    color: #e51a26;
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+}
+.carrito-borrar{
+    display: flex;
+    justify-content: flex-end;
+}
+.carrito-borrar a{
+    color: #cccccc;
+}
+.carrito-borrar a:hover{
+    color: #e51a26;
+}
+.parte-medio-carrito{
+    padding: 10px;
+}
 /* MODAL DIVISA */
 #modal-divisa{
     width: 100vw;
@@ -302,7 +451,7 @@ nav{
     top: 90px;
     left: 0;
     width: 100%;
-    z-index: 1000;
+    z-index: 2;
 }
 nav a{
     color: #ffffff;
@@ -372,50 +521,70 @@ footer{
 }
 .carta{
     background-color: #ffffff;
-    width: 180px;
+    width: 200px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     border-radius: 10px;
-    height: 250px;
+    height: 450px;
+    padding: 24px;
 }
-.carta h1{
-    padding-top: 10px;
+.carta-img{
+    display: flex;
+    justify-content: center;
+}
+.carta-img img{
+    width: 160px;
+    height: 160px;
+}
+.carta-nombre{
+    margin-top: 10px;
+    display: flex;
+    margin-bottom: 30px;
+}
+.carta-nombre h1{
     color: #212121;
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
-    font-size: 18px;}
-.carta h2{
+    font-size: 18px;
+}
+.carta-precio{
+    margin-top: 14px;
+    margin-bottom: 0px;
+}
+.carta-precio h1{
     color: #e51a26;
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
-    font-size: 24px;
-    padding-bottom: 5px;
+    font-size: 17px;
 }
-.carta img{
-    width: 150px;
-    height: 150px;
-}
-.boton-agregar{
-    padding-top: 20px;
-}
-.boton-agregar button{
-    width: 180px;
-    border-radius: 10px;
-    border-style: none;
-    background-color: #e51a26;
-    color: #ffffff;
+.carta-stock h1{
+    color: #212121;
+    font-weight: bold;
     font-family: 'Roboto', sans-serif;
-    font-size: 16px;
+    font-size: 17px;
 }
-.boton-agregar a{
-    border-style: none;
-    background-color: #e51a26;
+.carta-stock{
+    margin-bottom: 10px;
+}
+.carta-final{
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.contenedor-link-agregar a{
     color: #ffffff;
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     text-decoration: none;
+}
+.contenedor-link-agregar{
+    background-color: #e51a26;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    border-radius: 19px;
+    align-self: center;
 }
 /* MAIN PAGINA PRINCIPAL */
 main{
@@ -456,7 +625,6 @@ main{
     margin-top: 0;
     margin-bottom: 0;
 }
-
 /* CONTENEDOR PRODUCTOS OFERTA */
 
 .ofertas{

@@ -8,3 +8,7 @@ class Producto(models.Model):
     imagen = models.CharField(max_length=255)
     def __str__(self):
         return self.nombre
+
+class Carrusel(models.Model):
+    id = models.AutoField(primary_key=True)
+    imagen = models.CharField(max_length=255)
