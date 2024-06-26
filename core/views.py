@@ -3,7 +3,7 @@ from .models import *
 from .forms import * 
 # HEADER
 def carrito(request):
-    return render(request, "carrito.html")
+     return render(request, "carrito.html")
 # BARRA NAV
 def home(request):
     productos = Producto.objects.all()
@@ -46,9 +46,6 @@ def repetirPedidos(request):
     return render(request, "footer-html/repetir-pedidos.html")
 def terminosCondiciones(request):
     return render(request, "footer-html/terminos-condiciones.html")
-# REGISTRARSE
-# def registrarse(request):
-#     return render(request, "registrarse.html")
 # CARRITO
 def delToCar(request, id):
     carrito = request.session.get("carrito", [])
