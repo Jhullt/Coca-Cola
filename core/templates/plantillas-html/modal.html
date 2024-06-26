@@ -1,7 +1,8 @@
 {% load static %}
 <div id="modal-cuenta">
     <div class="interno-cuenta">
-        <form action="#">
+        <form action="{% url 'login' %}" method="post">
+            {% csrf_token %}
             <div class="datos-cuenta">
                 <div class="cerrar-contenedor-cuenta">
                     <button class="cerrar-boton" type="button" onclick="showModalCuenta()">X</button>
@@ -13,18 +14,12 @@
                     <h3>*</h3>
                 </div>
                 <input type="text" name="usuario" class="form-control incorrect" id="user" onkeyup="validarUsuario()">
-                <div class="contenedor-error">
-                    <p class="texto-error" id="error-user">El usuario no puede estar vacío</p>
-                </div>
                 <div class="password">
                     <h2>Contraseña</h2>
                     <h3>*</h3>
                 </div>
                 <input type="password" name="password" class="form-control incorrect" id="password"
                     onkeyup="validarPassword()">
-                <div class="contenedor-error">
-                    <p class="texto-error" id="error-password">La contraseña no puede estar vacía</p>
-                </div>
                 <div class="contenedor-iniciar-sesion">
                     <button class="iniciar-sesion">Iniciar Sesión</button>
                 </div>
@@ -88,16 +83,17 @@
                 <div class="contenedor-pago-final">
                     <div class="contenedor-total-carrito">
                         <h1>Total :</h1>
-                        <h2>$13.520</h2>
+                        <h2>${{ request.session.total }}</h2>
                     </div>
                     <div class="contenedor-button-pago">
-                        <button>Ir al pago</button>
+                        <button>Pagar</button>
                     </div>
                     <div class="contenedor-pedidos-anteriores">
-                        <button>Ir a pedidos anteriores</button>
+                        <div class="boton-limpiar-carrito">
+                            <a href="{% url 'limpiar' %}">Limpiar carrito</a>
+                        </div>
                     </div>
                 </div>
-
             </div>
         </form>
     </div>

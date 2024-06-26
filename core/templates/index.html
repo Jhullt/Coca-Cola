@@ -7,6 +7,16 @@
 <body>
     {% include 'plantillas-html/header.html' %}
     {% include 'plantillas-html/nav.html' %}
+
+    {% if modal %}
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      let modal = document.querySelector("#modal-cuenta")
+      modal.classList.toggle("show")
+    });
+    </script>
+    {% endif %}
+
     <!-- INICIO MAIN -->
     <main>
         <div class="contenedor-carrusel">

@@ -14,7 +14,7 @@
                 <h1>REGISTRARSE</h1>
             </div>
         </div>
-        <form class="registro-supremo" action="#">
+        <form method="post" class="registro-supremo" action="{% url 'registrarse' %}">
             <div class="contenedor-registro-arriba">
                 <div class="registro-izquierda">
                     {% csrf_token %}

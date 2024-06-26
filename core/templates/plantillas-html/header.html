@@ -10,7 +10,15 @@
                 <button id="currencyButton" onclick="showModalDivisa()">CLP | Peso Chileno</button>
             </div>
             <div class="cuenta">
-                <button onclick="showModalCuenta()"><i class="fa-solid fa-user"></i> Mi cuenta</button>
+                {% if user.is_authenticated %}
+                    <div class="contenedor-cerrar-sesion-final">
+                        <form action="{% url 'logout' %}" method="post"></form>
+                        {% csrf_token %}
+                        <button type="submit"><i class="fa-solid fa-right-from-bracket"></i> {{user.username}}</button>
+                    </div>
+                {% else %}
+                    <button onclick="showModalCuenta()"><i class="fa-solid fa-user"></i> Mi cuenta</button>
+                {% endif %}
             </div>
             <div class="carrito">
                 <a class="carrito-a" href="#" onclick="showModalCarrito()"><i class="fa-solid fa-cart-shopping"></i> ({{ request.session.carrito|length}})</a>

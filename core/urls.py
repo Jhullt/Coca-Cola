@@ -4,6 +4,10 @@ from core.views import *
 from django.contrib.auth.views import LoginView
 
 urlpatterns = [
+    # LOGIN
+    path('login', iniciar_sesion, name = "login"),
+    # LOGOUT 
+    path('logout', logout, name = "logout"),
     # BARRA NAV 
     path('', home, name = "home"),
     path('retornables', retornables, name = "retornables"),
@@ -31,4 +35,5 @@ urlpatterns = [
     path('carrito', carrito, name = "carrito"),
     path('addToCar/<id>', addToCar, name = "addToCar"),
     path('delToCar/<id>', delToCar, name = "delToCar"),
+    path('limpiar', limpiarCarrito, name = "limpiar"),
 ]
