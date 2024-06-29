@@ -3,6 +3,7 @@ from .models import *
 from django.http import HttpResponse
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.views import logout_then_login
+from django.http import HttpResponseRedirect
 
 from .forms import * 
 # LOGIN
@@ -34,22 +35,88 @@ def home(request):
     context["carrusel"] = Carrusel.objects.all()
 
     return render(request, "index.html", context)
+
 def retornables(request):
-    return render(request, "barra-nav-html/retornables.html")
+    context = {}
+    if request.session.get("total", None) == None:
+        request.session["total"] = 0
+    print(request.session.get("modal", None))
+    if request.session.get("modal", None) == True:
+        context["modal"]= True
+        del(request.session["modal"])
+    context["productos"] = Producto.objects.all()
+    return render(request, "barra-nav-html/retornables.html", context)
+
 def bebidas(request):
-    return render(request, "barra-nav-html/bebidas.html")
+    context = {}
+    if request.session.get("total", None) == None:
+        request.session["total"] = 0
+    print(request.session.get("modal", None))
+    if request.session.get("modal", None) == True:
+        context["modal"]= True
+        del(request.session["modal"])
+    context["productos"] = Producto.objects.all()
+    return render(request, "barra-nav-html/bebidas.html", context)
 def aguaJugos(request):
-    return render(request, "barra-nav-html/agua-jugos.html")
+    context = {}
+    if request.session.get("total", None) == None:
+        request.session["total"] = 0
+    print(request.session.get("modal", None))
+    if request.session.get("modal", None) == True:
+        context["modal"]= True
+        del(request.session["modal"])
+    context["productos"] = Producto.objects.all()
+    return render(request, "barra-nav-html/agua-jugos.html", context)
 def cervezas(request):
-    return render(request, "barra-nav-html/cervezas.html")
+    context = {}
+    if request.session.get("total", None) == None:
+        request.session["total"] = 0
+    print(request.session.get("modal", None))
+    if request.session.get("modal", None) == True:
+        context["modal"]= True
+        del(request.session["modal"])
+    context["productos"] = Producto.objects.all()
+    return render(request, "barra-nav-html/cervezas.html", context)
 def licores(request):
-    return render(request, "barra-nav-html/licores.html")
+    context = {}
+    if request.session.get("total", None) == None:
+        request.session["total"] = 0
+    print(request.session.get("modal", None))
+    if request.session.get("modal", None) == True:
+        context["modal"]= True
+        del(request.session["modal"])
+    context["productos"] = Producto.objects.all()
+    return render(request, "barra-nav-html/licores.html", context)
 def vinos(request):
-    return render(request, "barra-nav-html/vinos.html")
+    context = {}
+    if request.session.get("total", None) == None:
+        request.session["total"] = 0
+    print(request.session.get("modal", None))
+    if request.session.get("modal", None) == True:
+        context["modal"]= True
+        del(request.session["modal"])
+    context["productos"] = Producto.objects.all()
+    return render(request, "barra-nav-html/vinos.html", context)
 def espumantes(request):
-    return render(request, "barra-nav-html/espumantes.html")
+    context = {}
+    if request.session.get("total", None) == None:
+        request.session["total"] = 0
+    print(request.session.get("modal", None))
+    if request.session.get("modal", None) == True:
+        context["modal"]= True
+        del(request.session["modal"])
+    context["productos"] = Producto.objects.all()
+    return render(request, "barra-nav-html/espumantes.html", context)
 def merchandising(request):
-    return render(request, "barra-nav-html/merchandising.html")
+    context = {}
+    if request.session.get("total", None) == None:
+        request.session["total"] = 0
+    print(request.session.get("modal", None))
+    if request.session.get("modal", None) == True:
+        context["modal"]= True
+        del(request.session["modal"])
+    context["productos"] = Producto.objects.all()
+    return render(request, "barra-nav-html/merchandising.html", context)
 # FOOTER
 def miPerfil(request):
     return render(request, "footer-html/mi-perfil.html")
@@ -73,7 +140,6 @@ def terminosCondiciones(request):
     return render(request, "footer-html/terminos-condiciones.html")
 # CARRITO
 def delToCar(request, id):
-    
     referer = request.META.get('HTTP_REFERER').strip('/').split('/')[-1]
     carrito = request.session.get("carrito", [])
     total = 0
@@ -115,13 +181,38 @@ def addToCar(request, id):
         total += item["subtotal"]
     request.session["total"] = total
     request.session["carrito"] = carrito
-    return redirect(to="home")
+    next_url = request.GET.get('next')
+    if next_url:
+        return HttpResponseRedirect(next_url)
+    return redirect('home')
 
 def limpiarCarrito(request):
     referer = request.META.get('HTTP_REFERER').strip('/').split('/')[-1]
     request.session["carrito"] = []
     request.session["total"] = 0
     return redirect(to= ("home" if ":" in referer else referer))
+
+# DESCONTAR STOCK
+def pagar(request):
+    carrito = request.session.get('carrito', [])
+    
+    for item in carrito:
+        product_id = item.get('id')
+        cantidad = item.get('cantidad')
+        if product_id and cantidad:
+            try:
+                producto = Producto.objects.get(id=product_id)
+                if producto.stock >= cantidad:
+                    producto.stock -= cantidad
+                    producto.save()
+                else:
+                    pass
+            except Producto.DoesNotExist:
+                pass
+    request.session['carrito'] = []
+    request.session['total'] = 0
+    
+    return redirect('home')
 
 #REGISTRO
 def registrarse(request):

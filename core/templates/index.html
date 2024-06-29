@@ -48,29 +48,31 @@
                 <h1>OFERTAS</h1>
             </div>
         </div>
-        <div class="ofertas">
+        <div class="contenedor-productos-todas-paginas">
           {% for item in productos %}
-          <div class="contenedor-producto">
-            <div class="carta">
-              <div class="carta-img">
-                <img src="{% static item.imagen %}" alt="">
-              </div>
-              <div class="carta-nombre">
-                <h1>{{ item.nombre }}</h1>
-              </div>
-              <div class="carta-final">
-                <div class="carta-precio">
-                  <h1>Precio: ${{ item.precio }}</h1>
+            {% if item.id_pagina == 1 %}
+            <div class="contenedor-producto">
+              <div class="carta">
+                <div class="carta-img">
+                  <img src="{% static item.imagen %}">
                 </div>
-                <div class="carta-stock">
-                  <h1>Stock: {{ item.stock}}</h1>
-                </div>  
-                <div class="contenedor-link-agregar">
-                  <a href="{%url 'addToCar' item.id %}">AGREGAR</a>
+                <div class="carta-nombre">
+                  <h1>{{ item.nombre }}</h1>
+                </div>
+                <div class="carta-final">
+                  <div class="carta-precio">
+                    <h1>Precio: ${{ item.precio }}</h1>
+                  </div>
+                  <div class="carta-stock">
+                    <h1>Stock: {{ item.stock}}</h1>
+                  </div>  
+                  <div class="contenedor-link-agregar">
+                    <a href="{% url 'addToCar' item.id %}?next={{ request.path }}">AGREGAR</a>
+                  </div>
                 </div>
               </div>
-            </div>
-        </div>
+          </div>
+          {% endif %}
         {% endfor %}
         </div>
         <div class="separador-nombre">
@@ -78,8 +80,32 @@
                 <h1>POPULAR</h1>
             </div>
         </div>
-        <div class="popular">
-            
+        <div class="contenedor-productos-todas-paginas">
+          {% for item in productos %}
+            {% if item.id_pagina == 2 %}
+            <div class="contenedor-producto">
+              <div class="carta">
+                <div class="carta-img">
+                  <img src="{% static item.imagen %}">
+                </div>
+                <div class="carta-nombre">
+                  <h1>{{ item.nombre }}</h1>
+                </div>
+                <div class="carta-final">
+                  <div class="carta-precio">
+                    <h1>Precio: ${{ item.precio }}</h1>
+                  </div>
+                  <div class="carta-stock">
+                    <h1>Stock: {{ item.stock}}</h1>
+                  </div>  
+                  <div class="contenedor-link-agregar">
+                    <a href="{% url 'addToCar' item.id %}?next={{ request.path }}">AGREGAR</a>
+                  </div>
+                </div>
+              </div>
+          </div>
+          {% endif %}
+        {% endfor %}
         </div>
     </main>
     {% include 'plantillas-html/footer.html' %}

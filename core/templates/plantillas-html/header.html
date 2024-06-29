@@ -12,9 +12,10 @@
             <div class="cuenta">
                 {% if user.is_authenticated %}
                     <div class="contenedor-cerrar-sesion-final">
-                        <form action="{% url 'logout' %}" method="post"></form>
+                        <form action="{% url 'logout' %}" method="post">
                         {% csrf_token %}
                         <button type="submit"><i class="fa-solid fa-right-from-bracket"></i> {{user.username}}</button>
+                        </form>
                     </div>
                 {% else %}
                     <button onclick="showModalCuenta()"><i class="fa-solid fa-user"></i> Mi cuenta</button>

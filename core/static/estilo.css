@@ -279,23 +279,30 @@ header{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin-top: 20px;
-}
-.contenedor-button-pago button{
-    background-color: #e51a26;
-    color: #ffffff;
-    font-family: 'Roboto', sans-serif;
-    font-weight: bold;
-    border-style: none;
-    width: 250px;
-    height: 40px;
-    border-radius: 7px;
+    margin-top: 10px;
 }
 .contenedor-pedidos-anteriores{
     display: flex;
     flex-direction: row;
     justify-content: center;
     margin-top: 10px;
+}
+.boton-pagar-compra{
+    display: flex;
+    background-color: #212121;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    border-style: solid;
+    width: 250px;
+    height: 40px;
+    border-width: 3px;
+    border-radius: 7px;
+    align-items: center;
+    justify-content: center;
+}
+.boton-pagar-compra a{
+    color: #ffffff;
+    text-decoration: none;
 }
 .boton-limpiar-carrito a{
     font-family: 'Roboto', sans-serif;
@@ -534,6 +541,7 @@ footer{
 }
 /* CARTAS */
 .contenedor-producto{
+    margin-bottom: 30px;
     display: flex;
     flex-direction: column;
 }
@@ -645,17 +653,13 @@ main{
 }
 /* CONTENEDOR PRODUCTOS OFERTA */
 
-.ofertas{
+.contenedor-productos-todas-paginas{
     display: flex;
     width: 1000px;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: center;
-}
-.popular{
-    display: flex;
-    width: 1000px;
-    justify-content: space-around;
-    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 66px;
 }
 
 /* PAGINA RETORNABLES */

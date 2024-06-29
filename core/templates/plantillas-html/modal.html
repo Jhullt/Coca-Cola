@@ -86,7 +86,9 @@
                         <h2>${{ request.session.total }}</h2>
                     </div>
                     <div class="contenedor-button-pago">
-                        <button>Pagar</button>
+                        <div class="boton-pagar-compra">
+                            <a href="{% url 'pagar' %}">Pagar</a>
+                        </div>
                     </div>
                     <div class="contenedor-pedidos-anteriores">
                         <div class="boton-limpiar-carrito">

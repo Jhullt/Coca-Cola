@@ -4,15 +4,42 @@
 
 {% include 'plantillas-html/head.html' %}
 
-<body onload="getOfertas(); getPopular()">
+<body>
     {% include 'plantillas-html/header.html' %}
     {% include 'plantillas-html/nav.html' %}
     <!-- INICIO MAIN -->
     <main>
         <div class="separador-nombre">
             <div class="contenedor-titulo">
-                <h1></h1>
+                <h1>ESPUMANTES</h1>
             </div>
+        </div>
+        <div class="contenedor-productos-todas-paginas">
+          {% for item in productos %}
+            {% if item.id_pagina == 2 %}
+            <div class="contenedor-producto">
+              <div class="carta">
+                <div class="carta-img">
+                  <img src="{% static item.imagen %}">
+                </div>
+                <div class="carta-nombre">
+                  <h1>{{ item.nombre }}</h1>
+                </div>
+                <div class="carta-final">
+                  <div class="carta-precio">
+                    <h1>Precio: ${{ item.precio }}</h1>
+                  </div>
+                  <div class="carta-stock">
+                    <h1>Stock: {{ item.stock}}</h1>
+                  </div>  
+                  <div class="contenedor-link-agregar">
+                    <a href="{% url 'addToCar' item.id %}?next={{ request.path }}">AGREGAR</a>
+                  </div>
+                </div>
+              </div>
+          </div>
+          {% endif %}
+        {% endfor %}
         </div>
     </main>
     {% include 'plantillas-html/footer.html' %}

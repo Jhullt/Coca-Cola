@@ -36,4 +36,5 @@ urlpatterns = [
     path('addToCar/<id>', addToCar, name = "addToCar"),
     path('delToCar/<id>', delToCar, name = "delToCar"),
     path('limpiar', limpiarCarrito, name = "limpiar"),
+    path('pagar/', pagar, name = "pagar")
 ]
